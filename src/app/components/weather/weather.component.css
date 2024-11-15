@@ -1,0 +1,50 @@
+.weather-card {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lightslategray;
+    opacity: 0.4;
+    align-items: center;
+  }
+
+  .weather-card:hover {
+    opacity: 1;
+    background-color: darkgray ;
+  }
+  
+  .weather-card mat-card-title {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10%;
+    color: darkslateblue ;
+  }
+
+  .weather-card mat-card-subtitle {
+    margin-bottom: 5%;
+  }
+  
+  .input-field {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  .weather-info {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .weather-info img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 20px;
+  }
+  

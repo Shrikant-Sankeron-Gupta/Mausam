@@ -1,0 +1,76 @@
+/* Ensure the body and html take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Make the sidenav container fill the entire screen */
+  .sidenav-container {
+    background-image: url('../assets/images/cityCloud.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidenav-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Ensures it sits behind the content */
+  }
+  
+  /* Sidenav (menu) styles */
+  .sidenav {
+    width: 250px;            /* Width of the menu */
+    background-color: #3f51b5;  /* Material Indigo color */
+    color: white;
+    z-index: 1000;           /* Ensure it's above content when opened */
+  }
+  
+  /* Main content area */
+  .mat-sidenav-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  /* Align content vertically */
+    fill-opacity: inherit;
+  }
+  
+  /* Content container, this ensures your components take up full screen */
+  .app-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;  /* Allows scrolling if the content overflows */
+  }
+  
+  /* Optional: Adjust styles for smaller screens */
+  @media (max-width: 768px) {
+    .sidenav {
+      width: 200px;
+    }
+  
+    mat-sidenav-container {
+      display: block;  /* Stacks sidenav and content vertically on smaller screens */
+    }
+  }
+
+  /* Footer Styles */
+.app-footer {
+    background-color: #3f51b5;  /* Material Indigo color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;               /* Make sure footer spans the full width */
+    position: relative;        /* Ensures it stays in place */
+    bottom: 0;                 /* Stick the footer to the bottom */
+    z-index: 1;
+    margin-top: auto;          /* Push the footer at the bottom of screen */
+  }

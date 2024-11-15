@@ -1,0 +1,28 @@
+<mat-card class="weather-card">
+    <mat-card-header>
+        <mat-card-title>Current</mat-card-title>
+        <mat-card-subtitle>Enter a city to get the current weather data</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="input-field">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="city" (keydown.enter)="fetchWeather()" placeholder="Enter city name">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="fetchWeather()">Get Weather</button>
+  
+      <div *ngIf="weatherData" class="weather-info">
+        <h3>Weather in {{ weatherData.location.name }}</h3>
+        <p>Temperature: {{ weatherData.current.temp_c }} °C</p>
+        <p>Condition: {{ weatherData.current.condition.text }}</p>
+        <img [src]="weatherData.current.condition.icon" alt="weather icon">
+      </div>
+  
+      <!-- Display error message only when showError is true -->
+      <div *ngIf="showError" class="error-message">
+        <p>No weather data found for the specified city. Please try again.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
