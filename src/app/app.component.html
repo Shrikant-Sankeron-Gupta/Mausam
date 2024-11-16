@@ -5,6 +5,8 @@
         <mat-nav-list>
             <mat-list-item (click)="selectOption('weather'); sidenav.close()">Weather</mat-list-item>
             <mat-list-item (click)="selectOption('forecast'); sidenav.close()">Forecast</mat-list-item>
+            <mat-list-item (click)="selectOption('astronomy'); sidenav.close()">Astronomy</mat-list-item>
+            <mat-list-item (click)="selectOption('about'); sidenav.close()">About Us</mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
 
@@ -24,10 +26,16 @@
         <div *ngIf="selectedOption === 'forecast'">
             <app-forecast></app-forecast> <!-- Forecast Component -->
         </div>
+        <div *ngIf="selectedOption === 'about'">
+            <app-about></app-about> <!-- About us component-->
+        </div>
+        <div *ngIf="selectedOption === 'astronomy'">
+            <app-astronomy></app-astronomy> <!-- Astronomy component-->
+        </div>
 
         <!-- Footer Section -->
         <div class="app-footer">
-            <p>&copy; 2024 Weather Monitor. All rights reserved.</p>
+            <p>&copy; 2024 Mausam. All rights reserved.</p>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,0 +1,44 @@
+<mat-card class="astronomy-card">
+    <mat-card-header>
+        <mat-card-title>Astronomy</mat-card-title>
+        <mat-card-subtitle>Enter city & date to get Astronomy data!</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-form-field appearance="fill" class="input-field" aria-required="true">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="city" placeholder="Enter city name" required (keydown.enter)="onEnterKey($event)">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="date"
+              required
+              placeholder="YYYY-MM-DD"
+              required
+              (keydown.enter)="onEnterKey($event)"
+            />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+          </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="getAstronomyData()" [disabled]="!city || !date">Get Astronomy</button>
+
+        <div *ngIf="astronomyData" class="astronomy-info">
+            <p>Sunrise: {{astronomyData.astro.sunrise}}</p>
+            <p>Sunset: {{astronomyData.astro.sunset}}</p>
+            <p>Moonrise: {{astronomyData.astro.moonrise}}</p>
+            <p>MoonSet: {{astronomyData.astro.moonset}}</p>
+            <p>Moon Phase: {{astronomyData.astro.moon_phase}}</p>
+            <p>Moon Illumination: {{astronomyData.astro.moon_illumination}}</p>
+        </div>
+
+        <!-- Display error message only when showError is true -->
+        <div *ngIf="showError" class="error-message">
+            <p>No astronomy data found. Please try again.</p>
+        </div>
+    </mat-card-content>
+</mat-card>

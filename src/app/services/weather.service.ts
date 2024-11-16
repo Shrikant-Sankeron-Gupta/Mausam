@@ -20,4 +20,9 @@ export class WeatherService {
     const url = `${this.apiUrl}/forecast.json?key=${this.apiKey}&q=${city}&days=${days}`;
     return this.http.get(url);
   }
+
+  public getAstronomyDetails(city: string, date: string): Observable<any> {
+    const url = `${this.apiUrl}/astronomy.json?key=${this.apiKey}&q=${city}&dt=${date}`;
+    return this.http.get(url);
+  }
 }

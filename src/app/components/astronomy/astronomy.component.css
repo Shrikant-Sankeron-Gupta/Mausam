@@ -1,0 +1,54 @@
+.astronomy-card {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lightslategray;
+    opacity: 0.4;
+    align-items: center;
+  }
+
+  .astronomy-card:hover {
+    opacity: 1;
+    background-color: darkgray ;
+  }
+
+  .astronomy-card mat-card-title {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    align-items: center;
+    margin: 10%;
+    text-align: center;
+    color: darkslateblue;
+  }
+
+  .astronomy-card mat-card-subtitle {
+    margin-bottom: 5%;
+    align-items: center;
+    text-align: center;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-card {
+    margin-top: 20px;
+  }
+  
+  button[disabled] {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .astronomy-info {
+    margin-top: 20px;
+    font-size: 18px;
+  }

@@ -7,7 +7,7 @@ html, body {
   
   /* Make the sidenav container fill the entire screen */
   .sidenav-container {
-    background-image: url('../assets/images/cityCloud.jpg');
+    background-image: url('../assets/images/deep_blue_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
